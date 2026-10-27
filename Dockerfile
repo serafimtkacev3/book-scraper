@@ -1,11 +1,11 @@
+
 FROM python:3.12-slim
 
 WORKDIR /app
 
+COPY pyproject.toml ./
 COPY src/ ./src/
 
-RUN pip install --no-cache-dir aiohttp beautifulsoup4
-
-ENV PYTHONPATH=/app/src
+RUN python -m pip install --no-cache-dir .
 
 CMD ["python", "-m", "book_scraper.async_scraper"]
