@@ -6,3 +6,4 @@ __pycache__/
 runs.json
 books_analysis.csv
 .pytest_cache/
+async_books.json
