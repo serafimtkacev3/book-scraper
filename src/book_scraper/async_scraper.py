@@ -1,3 +1,4 @@
+from datetime import datetime
 import time
 import logging
 import asyncio
@@ -94,6 +95,25 @@ async def main():
     execution_time = end_time - start_time
 
     logger.info(f"Парсер завершён за {execution_time:.2f} секунд")
+    run_log = {
+        "time": datetime.now().isoformat(timespec="seconds"),
+        "books_count": len(all_books),
+        "execution_time": round(execution_time, 2)
+    }
+
+    try:
+        with open("runs.json", "r", encoding="utf-8") as file:
+            runs = json.load(file)
+
+    except FileNotFoundError:
+        runs = []
+
+    runs.append(run_log)
+
+    with open("runs.json", "w", encoding="utf-8") as file:
+        json.dump(runs, file, ensure_ascii=False, indent=4)
+
+    print("История запусков сохранена в runs.json")
 
 
 if __name__ == "__main__":

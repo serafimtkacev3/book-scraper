@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 *.egg-info/
 *.log
+runs.json
+books_analysis.csv
+.pytest_cache/

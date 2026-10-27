@@ -10,7 +10,8 @@ dependencies = [
     "requests",
     "beautifulsoup4",
     "aiohttp",
-    "matplotlib"
+    "matplotlib",
+    "pandas",
 ]
 
 [tool.setuptools.packages.find]

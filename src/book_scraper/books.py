@@ -7,6 +7,15 @@ class Book:
     price: float
 
 
+def get_price_category(price: float) -> str:
+    if price < 20:
+        return "Дешёвые"
+    elif price < 40:
+        return "Средние"
+    else:
+        return "Дорогие"
+
+
 def get_books():
     books = [
         Book(title="Python", price=850),
