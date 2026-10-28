@@ -5,7 +5,7 @@ from .async_scraper import main
 
 
 async def scheduler():
-    interval = 10
+    interval = 600
 
     while True:
         print(f"\nЗапуск парсера: {datetime.now()}")
